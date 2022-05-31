@@ -1,10 +1,9 @@
 public class Map {
-    private int sizeLength;
-    private int sizeWidth;
+    static int sizeLength;
+    static int sizeWidth;
 
     Map(int sizeLength, int sizeWidth){
         this.sizeLength = sizeLength;
         this.sizeWidth = sizeWidth;
     }
-
 }
