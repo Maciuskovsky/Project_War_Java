@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-
+//import java.io.PrintWriter; logowanie zdarzeń do pliku
+//import java.io.FileWriter; logowanie zdarzeń do pliku
 public class Battlefield {
     static int width=16;
     static int height=10;
@@ -46,13 +47,21 @@ public class Battlefield {
                 arrayTypeTanks.add(i, scanner.nextInt());
             }
         generateBattlefield();
-            int dayCounter=0;
+        
+        // FileWriter plik=new FileWriter("BattleResultsLog.txt",true);
+        // PrintWriter out=new PrintWriter(plik);
+        
+        int dayCounter=0;
             while(!win){
                 moveDivisions();
                 boolean team1=false;
                 boolean team2=false;
                 for(Division division : dywizje){
                     System.out.println(division.units.size());
+                    
+                    //out.println("Rozmiar dywizji" + " : " + division.units.size()); przykładowy zapis
+					//out.println();
+                    
                     if(division.team==false){
                         team1=true;
                         System.out.println("Masa1");
@@ -65,6 +74,9 @@ public class Battlefield {
                 if(team1==false || team2==false){
                     win=true;
                     System.out.println("Wygrana");
+                    
+                    // out.close();
+                    
                 }
             }
 
